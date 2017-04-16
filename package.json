@@ -1,0 +1,14 @@
+{
+  "name": "knowledge-node",
+  "version": "1.0.0",
+  "description": "Simple Node.js module for Google Knowledge API.",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [
+    "google",
+    "knowledge"
+  ],
+  "author": "sofiapm",
+  "license": "MIT"
+}
