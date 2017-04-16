@@ -2,13 +2,26 @@
   "name": "knowledge-node",
   "version": "1.0.0",
   "description": "Simple Node.js module for Google Knowledge API.",
+  "main": "./lib/knowledge.js",
   "directories": {
     "test": "test"
+  },
+  "scripts": {
+    "test": "mocha",
+    "debugtest": "mocha --debug-brk $npm_package_options_mocha",
+    "start": "node ./lib/knowledge.js"
   },
   "keywords": [
     "google",
     "knowledge"
   ],
   "author": "sofiapm",
-  "license": "MIT"
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "config": "^1.25.1",
+    "mocha": "^3.2.0",
+    "qs": "^6.4.0",
+    "request": "^2.81.0"
+  }
 }
