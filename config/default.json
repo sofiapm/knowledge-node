@@ -1,3 +1,26 @@
 {
-    "url": "https://kgsearch.googleapis.com/v1/entities:search?"
+    "url": "https://kgsearch.googleapis.com/v1/entities:search?",
+    "types": {
+        "book": "Book",
+        "bookSeries": "BookSeries",
+        "educationalOrganization": "EducationalOrganization",
+        "event": "Event",
+        "governmentOrganization": "GovernmentOrganization",
+        "localBusiness": "LocalBusiness",
+        "movies": "Movie", 
+        "movieSeries": "MovieSeries",
+        "musicAlbum": "MusicAlbum", 
+        "musicGroup": "MusicGroup",
+        "musicRecording": "MusicRecording",
+        "organization": "Organization",
+        "periodical": "Periodical",
+        "person": "Person",
+        "place": "Place",
+        "sportsTeam": "SportsTeam",
+        "tvEpisode": "TVEpisode",
+        "tvSeries": "TVSeries",
+        "videoGame": "VideoGame",
+        "videoGameSeries": "VideoGameSeries",
+        "webSite": "WebSite"
+    }
 }

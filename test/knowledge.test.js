@@ -1,27 +1,26 @@
-'use strict'
 
-const auth = require('./fixtures/auth.json');
-const assert = require('assert');
-const knowledge = require('../lib/knowledge');
-const Knowledge = new knowledge({ serverKey: auth.serverKey });
+var auth = require('./fixtures/auth.json');
+var assert = require('assert');
+var knowledge = require('../lib/knowledge');
+var Knowledge = new knowledge({ serverKey: auth.serverKey });
 
 module.exports = {
   
   'test types()': function () {
-    const allTypes = Knowledge.types();
+    var allTypes = Knowledge.types;
     assert.equal(allTypes.book, 'Book');
   },
 
   'test buildParams() with all attributes': function () {
-    const query = 'Harry Potter';
-    const types = [
-      'Book',
-      'BookSeries'
+    var query = 'Harry Potter';
+    var types = [
+      Knowledge.types.book,
+      Knowledge.types.bookSeries
     ];
-    const limit = 5;
-    const indent = true;
+    var limit = 5;
+    var indent = true;
 
-    const parameters = Knowledge.buildParams(query, types, limit, indent);
+    var parameters = Knowledge.buildParams(query, types, limit, indent);
     assert.equal(parameters.query, query);
     assert.equal(parameters.types, types);
     assert.equal(parameters.limit, limit);
@@ -29,28 +28,28 @@ module.exports = {
   },
 
   'test buildParams() without not required attributes': function () {
-    const query = 'Harry Potter';
-    const types = [
+    var query = 'Harry Potter';
+    var types = [
       'Book',
       'BookSeries'
     ];
 
-    const parameters = Knowledge.buildParams(query, types);
+    var parameters = Knowledge.buildParams(query, types);
     assert.equal(parameters.query, query);
     assert.equal(parameters.types, types);
     assert.equal(parameters.limit, 20);
     assert.equal(parameters.indent, true);
   },
 
-  'test request()': function () {
-    const query = 'Harry Potter';
-    const types = [
+  'test search()': function () {
+    var query = 'Harry Potter';
+    var types = [
       'Book',
       'BookSeries'
     ];
 
-    const params = Knowledge.buildParams(query, types);
-    return Knowledge.request(params)
+    var params = Knowledge.buildParams(query, types);
+    return Knowledge.search(params)
                     .then(body => {
                         assert.ok(body);
                     })
