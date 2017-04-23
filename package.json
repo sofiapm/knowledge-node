@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Simple Node.js module for Google Knowledge API.",
   "main": "./lib/knowledge.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sofiapm/knowledge-node.git"
+  },
   "directories": {
     "test": "test"
   },
